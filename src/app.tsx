@@ -218,6 +218,7 @@ function SettingsView() {
         <legend>About</legend>
         <p>Study Kit {VERSION}. Free, offline, built by rules, not AI. Nothing you open is uploaded.</p>
         <p>Check for updates at studyspine.org/study-kit.</p>
+        <p>Free for students, families, teachers and schools (PolyForm Noncommercial License 1.0.0). Commercial use needs a license from MLN Learning LLC.{!SINGLE && <> <a href="/third-party-notices.txt">Third-party notices</a>.</>}</p>
       </fieldset>
     </div>
   );

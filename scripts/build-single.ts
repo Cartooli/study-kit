@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { zipSync } from 'fflate';
 import { build } from 'vite';
+import { thirdPartyNotices } from './notices.ts';
 
 const { version } = JSON.parse(readFileSync('package.json', 'utf8')) as { version: string };
 
@@ -72,11 +73,15 @@ file" (in Settings) next time.
 
 Scanned pages and photos need a scan reader, which this edition does not include.
 Check for updates at studyspine.org/study-kit.
+
+Free for students, families, teachers and schools under the PolyForm Noncommercial
+License 1.0.0 (LICENSE.txt). Commercial use needs a license from MLN Learning LLC.
 `;
 const zip = zipSync({
   'study-kit/study-kit.html': new TextEncoder().encode(html),
   'study-kit/README.txt': new TextEncoder().encode(readme),
   'study-kit/LICENSE.txt': readFileSync('LICENSE'),
+  'study-kit/THIRD-PARTY-NOTICES.txt': new TextEncoder().encode(thirdPartyNotices()),
 }, { mtime: new Date('2026-01-01T00:00:00Z') }); // fixed mtime keeps the zip reproducible
 const zipName = `study-kit-v${version}.zip`;
 writeFileSync(`release/${zipName}`, zip);

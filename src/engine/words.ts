@@ -1,4 +1,4 @@
-// Word lists authored for this project. Released under CC0 1.0.
+// Word lists authored for this project (covered by the project LICENSE).
 // ponytail: lists are shorter than the spec's targets (~1,500 common words, ~300 swaps, ~200 antonyms);
 // grow them while tuning against the golden set.
 

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Free, offline study-prep tool: turn your own material into flashcards, quizzes and practice tests. Built by rules, not AI.",
   "type": "module",
-  "license": "MIT",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "engines": {
     "node": ">=22.18"
   },

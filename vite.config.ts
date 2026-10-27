@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import { META_CSP } from './csp.ts';
+import { thirdPartyNotices } from './scripts/notices.ts';
 
 const { version } = JSON.parse(readFileSync('package.json', 'utf8')) as { version: string };
 
@@ -20,6 +21,7 @@ function hostedShell(): Plugin {
       const build = createHash('sha256').update(JSON.stringify(files)).digest('hex').slice(0, 10);
       const sw = readFileSync('src/sw.js', 'utf8').replace("'__VERSION__'", JSON.stringify(`${version}-${build}`)).replace('[/*__FILES__*/]', JSON.stringify(files));
       this.emitFile({ type: 'asset', fileName: 'sw.js', source: sw });
+      this.emitFile({ type: 'asset', fileName: 'third-party-notices.txt', source: thirdPartyNotices() });
     },
   };
 }

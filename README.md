@@ -52,4 +52,9 @@ Bump `version` in `package.json`, merge, then publish a GitHub Release tagged `v
 
 ## License
 
-MIT. Word lists in `src/engine/words.ts` are CC0.
+Copyright (c) 2026 MLN Learning LLC. Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+
+- **Free** for personal study and for schools, educational institutions, charities and government, including sharing the single-file edition with a class.
+- **Commercial use** (selling it, bundling it in a paid product or service, or running it for a business) needs a separate license from MLN Learning LLC. Ask through [studyspine.org/contact](https://studyspine.org/contact).
+- The license grants no trademark rights. "Study Kit" and "StudySpine" names and logos are not licensed.
+- Third-party packages keep their own licenses. Their notices ship in `third-party-notices.txt` (hosted) and `THIRD-PARTY-NOTICES.txt` (zip).
