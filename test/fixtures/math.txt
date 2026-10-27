@@ -1,0 +1,16 @@
+Unit 4 Practice: Linear Equations
+
+2x + 3 = 11
+x = 4
+3y - 7 = 8
+y = 5
+5a + 2 = 3a + 10
+2a = 8
+a = 4
+y = 2x + 1 slope = 2 intercept = 1
+4(x - 2) = 12
+x - 2 = 3
+x = 5
+7 = 2b - 3
+b = 5
+A slope is the steepness of a line.
