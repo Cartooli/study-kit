@@ -4,3 +4,5 @@ dist-single/
 release/
 scratch/
 .claude/
+.vercel
+.env*
