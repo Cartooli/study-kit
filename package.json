@@ -1,0 +1,33 @@
+{
+  "name": "study-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Free, offline study-prep tool: turn your own material into flashcards, quizzes and practice tests. Built by rules, not AI.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:single": "node scripts/build-single.ts",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "node --test 'test/*.test.ts'",
+    "check": "node scripts/checks.ts",
+    "ci": "npm run typecheck && npm test && npm run build && npm run build:single && npm run check"
+  },
+  "dependencies": {
+    "compromise": "14.19.0",
+    "fflate": "0.8.3",
+    "idb": "8.0.4",
+    "pdfjs-dist": "6.4.299",
+    "preact": "11.1.0",
+    "ts-fsrs": "5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

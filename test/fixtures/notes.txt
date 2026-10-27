@@ -1,0 +1,12 @@
+Cell Biology Notes
+
+- Cell: the smallest unit of life
+- Nucleus: control center of the cell, holds DNA
+- Cell membrane: thin barrier that controls what enters and leaves the cell
+- Cytoplasm: jelly-like fluid that fills the cell
+- Mitochondria: organelles that release energy from food
+- Ribosomes: tiny structures that build proteins
+- Chloroplasts: found only in plant cells, carry out photosynthesis
+- Cell wall: stiff outer layer in plant cells, gives support
+- Plant cells have a cell wall and chloroplasts, animal cells do not.
+- Vacuole: storage sac for water and nutrients, very large in plant cells

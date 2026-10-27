@@ -1,0 +1,44 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [published]
+permissions:
+  contents: read
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run ci
+      - name: Reproducible build (two clean builds, identical hashes)
+        run: |
+          sha256sum dist/assets/* dist/sw.js release/study-kit.html > "$RUNNER_TEMP/first"
+          npm run build && npm run build:single
+          sha256sum dist/assets/* dist/sw.js release/study-kit.html | diff "$RUNNER_TEMP/first" -
+  release:
+    if: github.event_name == 'release'
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build:single
+      - run: npm sbom --sbom-format cyclonedx --omit dev > release/sbom.cdx.json
+      - run: gh release upload "${{ github.event.release.tag_name }}" release/study-kit.html release/study-kit-v*.zip release/SHA256SUMS release/sbom.cdx.json --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
