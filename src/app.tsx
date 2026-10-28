@@ -83,7 +83,13 @@ export function App({ initial }: { initial: store.Settings }) {
       )}
       <main id="main" tabIndex={-1}>{view}</main>
       <footer>
-        Study Kit {VERSION}{SINGLE ? ' (offline file)' : ''} · Free · Built by rules, not AI · Your files never leave this device.
+        <p>Study Kit {VERSION}{SINGLE ? ' (offline file)' : ''} · Free · Built by rules, not AI · Your files never leave this device.</p>
+        <p>
+          © 2026 MLN Learning LLC, a Virginia limited liability company ·{' '}
+          <a href="https://studyspine.org/privacy">Privacy Policy</a> ·{' '}
+          <a href="https://studyspine.org/terms">Terms of Service</a> ·{' '}
+          <a href="https://studyspine.org/contact">Contact</a>
+        </p>
       </footer>
     </SettingsCtx.Provider>
   );
@@ -219,6 +225,7 @@ function SettingsView() {
         <p>Study Kit {VERSION}. Free, offline, built by rules, not AI. Nothing you open is uploaded.</p>
         <p>Check for updates at studyspine.org/study-kit.</p>
         <p>Free for students, families, teachers and schools (PolyForm Noncommercial License 1.0.0). Commercial use needs a license from MLN Learning LLC.{!SINGLE && <> <a href="/third-party-notices.txt">Third-party notices</a>.</>}</p>
+        <p>Study Kit is operated by MLN Learning LLC as part of StudySpine. The StudySpine <a href="https://studyspine.org/privacy">Privacy Policy</a> and <a href="https://studyspine.org/terms">Terms of Service</a> apply. Questions go through the <a href="https://studyspine.org/contact">contact form</a>.</p>
       </fieldset>
     </div>
   );
