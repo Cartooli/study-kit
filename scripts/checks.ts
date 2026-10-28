@@ -42,8 +42,9 @@ for (const f of copy) {
 for (const f of walk('src')) if (/innerHTML|dangerouslySetInnerHTML|insertAdjacentHTML|document\.write/.test(readFileSync(f, 'utf8'))) fail.push(`xss: HTML sink in ${f}`);
 
 // 4. No network: the built app must not reference any other origin.
+// Canonical and Open Graph tags may name the hosted origin; they are not fetches.
 for (const f of [...hosted.filter(f => /\.(js|html|css)$/.test(f)), 'release/study-kit.html']) {
-  const t = readFileSync(f, 'utf8');
+  const t = readFileSync(f, 'utf8').replace(/<link\s+rel=["']canonical["'][^>]*>/gi, '');
   if (/\bfetch\(\s*["'`]https?:/.test(t) || /<(script|link)[^>]+(src|href)=["']https?:/.test(t)) fail.push(`network: external reference in ${f}`);
 }
 
