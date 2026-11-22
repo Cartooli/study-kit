@@ -85,7 +85,7 @@ export function App({ initial }: { initial: store.Settings }) {
       <footer>
         <p>Study Kit {VERSION}{SINGLE ? ' (offline file)' : ''} · Free · Built by rules, not AI · Your files never leave this device.</p>
         <p>
-          © 2026 MLN Learning LLC, a Virginia limited liability company ·{' '}
+          © 2026 MLN Learning LLC ·{' '}
           <a href="https://studyspine.org/privacy">Privacy Policy</a> ·{' '}
           <a href="https://studyspine.org/terms">Terms of Service</a> ·{' '}
           <a href="https://studyspine.org/contact">Contact</a>
